@@ -1,0 +1,95 @@
+.Profile {
+    /* height: 100%; */
+    width: 30%;
+    min-width: 300px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 10px;
+    background-color: aliceblue;
+    box-sizing: content-box;
+    /* border-left: solid 1px gray; */
+    z-index: 9999999;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.closePageBtn img {
+    height: 100%;
+    width: 100%;
+}
+
+.profile_pic_and_name {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 10px 20px;
+    border-bottom: solid 1px gray;
+    margin-bottom: 20px;
+    background-color: blanchedalmond;
+    margin-top: 10px;
+}
+
+.rounded-img-container {
+    height: 100px;
+    width: 100px;
+}
+
+.name {
+    font-size: 20px;
+    color: black;
+    margin-top: 10px;
+}
+
+.rounded-img-container img {
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+}
+
+.closePageBtn {
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    margin: 0;
+    margin-top: 3px;
+    overflow: hidden;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    /* background-color: rgb(227, 195, 145); */
+}
+
+.profile_item_container {
+    /* width: max-content; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding-right: 20px;
+}
+
+.profile_item {
+    /* padding: 10px 20px; */
+    margin-bottom: 20px;
+    width: 100%;
+    border-bottom: solid 1px gray;
+}
+
+.profile_item button {
+    color: gray;
+    outline: none;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 0;
+    background-color: aliceblue;
+}
+
+.logout {
+    color: red !important;
+    background-color: red;
+}

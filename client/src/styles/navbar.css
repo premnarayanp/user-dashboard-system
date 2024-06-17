@@ -1,5 +1,16 @@
-.nav {
+/* .nav {
     background: rgb(222, 180, 180);
+    height: 8%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+} */
+
+.nav {
+    background: burlywood;
     height: 8%;
     padding: 10px;
     box-sizing: border-box;
@@ -9,24 +20,34 @@
     position: relative;
 }
 
-.rounded-img-container {
+.profile_btn {
     height: 50px;
     width: 50px;
     cursor: pointer;
+    outline: none;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
 }
 
-.rounded-img-container img {
+.profile_btn img {
     height: 100%;
     width: 100%;
     border-radius: 100%;
 }
 
 .menuButton {
-    background-color: rgb(226, 147, 147);
     color: white;
     outline: none;
-    border-radius: 10px;
-    font-size: 18px;
+    border: 0;
+    font-size: 13px;
     font-weight: 700;
     cursor: pointer;
+    background: none;
+}
+
+.menuItem :hover {
+    color: gray;
+    border-bottom: 1px solid white;
+    transition: color 0.5s, border-bottom 4s;
 }

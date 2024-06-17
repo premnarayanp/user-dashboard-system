@@ -2,7 +2,8 @@ import {
     SUCCESS_SIGN_UP,
     SUCCESS_LOGIN,
     SUCCESS_LOGOUT,
-    SET_USER
+    SET_USER,
+    CLOSE_PROFILE,
 } from "../action/actionType"
 
 
@@ -13,6 +14,7 @@ const initialAuthState = {
     token: null,
     user: null,
     message: "",
+    isOpenProfilePage: false,
 };
 
 export default function auth(state = initialAuthState, action) {
@@ -47,6 +49,12 @@ export default function auth(state = initialAuthState, action) {
                 ...state,
                 user: action.user
             }
+        case CLOSE_PROFILE:
+            return {
+                ...state,
+                isOpenProfilePage: action.isOpenProfilePage
+            }
+
 
         default:
             return state;

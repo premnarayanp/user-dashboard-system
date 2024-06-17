@@ -8,6 +8,9 @@ import store from './redux/store/configureStore';
 import { App } from './components';
 import './styles/index.css';
 import { setUserFromToken } from './redux/action/authActions';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 setUserFromToken(store.dispatch);
 
