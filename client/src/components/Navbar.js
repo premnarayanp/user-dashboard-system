@@ -28,17 +28,23 @@ function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link to="/"><button className="nav-link active">Home</button></Link>
+              <Link to="/" className="nav-link active">Home</Link>
             </li>
 
             <li className="nav-item">
-              <Link to="/letters/joiningLetter"><button className="nav-link">Joining Letter</button> </Link>
+              <Link to="/letters/offerLetter" className="nav-link"><span>Offer Letter</span></Link>
             </li>
+
             <li className="nav-item">
-              <Link to="/letters/offerLetter"><button className="nav-link">Offer Letter</button> </Link>
+              <Link to="/letters/joiningLetter" className="nav-link">Joining Letter</Link>
             </li>
+
             <li className="nav-item">
-              <Link to="/carrier"><button className="nav-link">Carrier</button> </Link>
+              <Link to="/carrier" className="nav-link">Carrier</Link>
+            </li>
+
+            <li className="nav-item">
+              <Link to="/contact" className="nav-link">Contact</Link>
             </li>
 
           </ul>

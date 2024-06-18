@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import { useSelector, useDispatch } from 'react-redux';
 import '../styles/app.css'
-import { Home, Login, Signup, } from '../pages/index';
+import { Home, Login, Signup, OfferLetter, JoiningLetter, Carrier, Contact } from '../pages/index';
 import { Profile } from '../components/index';
 
 function App(props) {
@@ -31,6 +31,10 @@ function App(props) {
 
       <Routes>
         <Route path="/" element={<PrivateRoute> <Home /> </PrivateRoute>} />
+        <Route path="/letters/offerLetter" element={<PrivateRoute> <OfferLetter /> </PrivateRoute>} />
+        <Route path="/letters/joiningLetter" element={<PrivateRoute> <JoiningLetter /> </PrivateRoute>} />
+        <Route path="/carrier" element={<PrivateRoute> <Carrier /> </PrivateRoute>} />
+        <Route path="/contact" element={<PrivateRoute> <Contact /> </PrivateRoute>} />
         <Route exact path="/users/login" element={<Login />} />
         <Route exact path="/users/signup" element={<Signup />} />
         <Route path="*" element={<Page404 />} />
