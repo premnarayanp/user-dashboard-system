@@ -62,17 +62,17 @@ const customFetch = async (url, { body, ...customConfig }) => {
 
 //======================for pdf======================
 
-//view pdf /load from server and view on browser
-export const loadLetters = async (letter_id) => {
-  return customFetch(API_URLS.loadLetter(letter_id), {
-    method: 'GET',
-    responseType: 'arraybuffer'
-  });
-}
-
 export const downloadLetter = async (letter_id) => {
   return customFetch(API_URLS.downloadLetter(letter_id), {
     method: 'GET',
     responseType: 'arraybuffer'
   });
 }
+
+// //view pdf /load from server and view on browser
+// export const loadLetters = async (letter_id) => {
+//   return customFetch(API_URLS.loadLetter(letter_id), {
+//     method: 'GET',
+//     responseType: 'arraybuffer'
+//   });
+// }

@@ -18,16 +18,15 @@ const tempList = [
 export default function Home() {
   const dispatch = useDispatch();
   const letters = useSelector((state) => state.letterReducer);
-  //console.log("letters=", letters)
   const letterList = letters.letterList;
 
   useEffect(() => {
     async function fetchData() {
-      // const response = await getLetterPosts();
-      // if (response.success) {
-      //   dispatch(addLetterList(response.data.pdfList));
-      // }
-      dispatch(addLetterList(tempList));
+      const response = await getLetterPosts();
+      if (response.success) {
+        dispatch(addLetterList(response.data.letters));
+      }
+      //dispatch(addLetterList(tempList));
     }
     fetchData();
 

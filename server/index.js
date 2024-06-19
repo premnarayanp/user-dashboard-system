@@ -10,6 +10,12 @@ import passportJWT from './config/passport-jwt-strategy.js';
 const app = express();
 app.use(cors());
 
+
+//Thumbnail
+app.use('/pdfThumb', express.static('uploads/posts/thumbNail'));
+
+//Letter Pdf
+app.use('/pdf', express.static('uploads/posts/pdf'));
 // use passport...
 app.use(passport.initialize());
 

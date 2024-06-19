@@ -1,9 +1,38 @@
 import '../styles/letterCard.css';
+import { useToasts } from 'react-toast-notifications';
+import { downloadLetter } from '../api/axios'
 export default function LetterCard(props) {
     const letter = props.letter;
+    const API_ROOT = 'http://localhost:8362';
+    const { addToast } = useToasts();
+
+    const downloadPdfFile = async () => {
+        const response = await downloadLetter(letter._id);
+        if (response.success) {
+            //Build a URL from the file
+            var file = new Blob([response.data], { type: 'application/pdf' });
+            const fileURL = URL.createObjectURL(file);
+            const link = document.createElement('a');
+            link.href = fileURL;
+            link.download = "MyPdf.pdf"
+            document.body.appendChild(link);
+            link.click();
+            link.parentNode.removeChild(link);
+
+            addToast('Pdf Successfully Downloaded', {
+                appearance: 'success',
+            });
+        } else {
+            addToast(response.message, {
+                appearance: 'error',
+            });
+        }
+    }
+
+
     return (
         <div className="card LetterCard">
-            <img src={letter.img} className="card-img-top" alt="..." />
+            <img src={API_ROOT + letter.letterThumbURL} className="card-img-top" alt="..." />
             <div className="card-body">
                 <h5 className="card-title">{letter.title}</h5>
                 <p className="card-text">{letter.description}</p>
@@ -17,8 +46,8 @@ export default function LetterCard(props) {
                 <li className="list-group-item">Location:- {letter.location}</li>
             </ul>
             <div className="card-body">
-                <a href="https://drive.google.com/file/d/1dYgAtOsvpfrWsGZVWmtBIa7rwTBwY9uJ/view?usp=drive_link" className="card-link">View</a>
-                <a href="#" className="card-link">Download</a>
+                <a href={API_ROOT + letter.letterURL} className="card-link">View</a>
+                <button className="card-link" onClick={downloadPdfFile} >Download</button>
             </div>
         </div>
     );

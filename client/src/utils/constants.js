@@ -4,10 +4,10 @@ export const API_URLS = {
   //API URL for User
   login: () => `${API_ROOT}/users/login`,
   signup: () => `${API_ROOT}/users/signup`,
-  letterPosts: () => `${API_ROOT}/pdf/posts`,
-  filteredLetterPost: (letterType) => `${API_ROOT}/pdf/filter${letterType}`,
-  loadLetter: (letter_id) => `${API_ROOT}/pdf/loads/${letter_id}`,
-  downloadLetter: (letter_id) => `${API_ROOT}/pdf/downloads/${letter_id}`,
+  letterPosts: () => `${API_ROOT}/letters/posts`,
+  filteredLetterPost: (letterType) => `${API_ROOT}/letters/filter${letterType}`,
+  downloadLetter: (letter_id) => `${API_ROOT}/letters/downloads/${letter_id}`,
+  //loadLetter: (letter_id) => `${API_ROOT}/letters/loads/${letter_id}`,
 
 };
 
