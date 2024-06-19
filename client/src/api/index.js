@@ -62,22 +62,14 @@ export const signUp = async (name, email, password, confirmPassword) => {
   });
 };
 
-// export const allUser = async (id) => {
-//   return customFetch(API_URLS.allUser(id), {
-//     method: 'GET',
-//   });
-// };
+export const getLetterPosts = () => {
+  return customFetch(API_URLS.letterPosts(), {
+    method: 'GET',
+  });
+};
 
-// export const getAllMessage = async (from,to) => {
-//   return customFetch(API_URLS.getAllMessage(), {
-//     method: 'POST',
-//     body: { from,to },
-//   });
-// };
-
-// export const addMessage = async (msg) => {
-//   return customFetch(API_URLS.addMessage(), {
-//     method: 'POST',
-//     body: msg,
-//   });
-// };
+export const getFilteredLetterPost = (letterType) => {
+  return customFetch(API_URLS.filteredLetterPost(letterType), {
+    method: 'GET',
+  });
+};
