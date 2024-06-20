@@ -7,14 +7,14 @@ import { LetterCard } from "../components/index";
 
 export default function JoiningLetter() {
     const dispatch = useDispatch();
-    const letters = useSelector((state) => state.letters);
+    const letters = useSelector((state) => state.letterReducer);
     const joiningLetterList = letters.joiningLetterList;
 
     useEffect(() => {
         async function fetchData() {
             const response = await getFilteredLetterPost("joiningLetter");
             if (response.success) {
-                dispatch(addJoiningLetterList(response.data.pdfList));
+                dispatch(addJoiningLetterList(response.data.letters));
             }
         }
         fetchData();

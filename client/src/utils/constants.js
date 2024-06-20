@@ -5,7 +5,7 @@ export const API_URLS = {
   login: () => `${API_ROOT}/users/login`,
   signup: () => `${API_ROOT}/users/signup`,
   letterPosts: () => `${API_ROOT}/letters/posts`,
-  filteredLetterPost: (letterType) => `${API_ROOT}/letters/filter${letterType}`,
+  filteredLetterPost: (letterType) => `${API_ROOT}/letters/filter/${letterType}`,
   downloadLetter: (letter_id) => `${API_ROOT}/letters/downloads/${letter_id}`,
   //loadLetter: (letter_id) => `${API_ROOT}/letters/loads/${letter_id}`,
 

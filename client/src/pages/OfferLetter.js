@@ -7,14 +7,14 @@ import { LetterCard } from "../components/index";
 
 export default function OfferLetter() {
     const dispatch = useDispatch();
-    const letters = useSelector((state) => state.letters);
+    const letters = useSelector((state) => state.letterReducer);
     const offerLetterList = letters.offerLetterList;
 
     useEffect(() => {
         async function fetchData() {
             const response = await getFilteredLetterPost("offerLetter");
             if (response.success) {
-                dispatch(addOfferLetterList(response.data.pdfList));
+                dispatch(addOfferLetterList(response.data.letters));
             }
         }
         fetchData();

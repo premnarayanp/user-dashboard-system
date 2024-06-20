@@ -18,12 +18,15 @@ export const getAllLetters = async function (req, res) {
 }
 
 export const filterLetter = async (req, res) => {
+
+
     try {
         const letterType = req.params.letterType;
+        console.log("letterType=", letterType);
         const letters = await Letter.find({
             letterType: letterType
         });
-        res.status(200).json({ success: true, msg: "You have Letters that gated", data: letters });
+        res.status(200).json({ success: true, msg: "You have Letters that gated", data: { letters: letters } });
     } catch (error) {
         res.status(500).json({ success: false, msg: error.message });
     }
