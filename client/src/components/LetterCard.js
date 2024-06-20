@@ -3,7 +3,7 @@ import { useToasts } from 'react-toast-notifications';
 import { downloadLetter } from '../api/axios'
 export default function LetterCard(props) {
     const letter = props.letter;
-    const API_ROOT = 'http://localhost:8362';
+    //const API_ROOT = 'http://localhost:8362';
     const { addToast } = useToasts();
 
     const downloadPdfFile = async () => {
@@ -32,7 +32,7 @@ export default function LetterCard(props) {
 
     return (
         <div className="card LetterCard">
-            <img src={API_ROOT + letter.letterThumbURL} className="card-img-top" alt="..." />
+            <img src={letter.letterThumbURL} className="card-img-top" alt="..." />
             <div className="card-body">
                 <h5 className="card-title">{letter.title}</h5>
                 <p className="card-text">{letter.description}</p>
@@ -46,7 +46,7 @@ export default function LetterCard(props) {
                 <li className="list-group-item">Location:- {letter.location}</li>
             </ul>
             <div className="card-body">
-                <a href={API_ROOT + letter.letterURL} className="card-link">View</a>
+                <a href={letter.letterURL} className="card-link">View</a>
                 <button className="card-link" onClick={downloadPdfFile} >Download</button>
             </div>
         </div>
