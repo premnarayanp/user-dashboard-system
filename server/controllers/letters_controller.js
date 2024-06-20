@@ -22,7 +22,7 @@ export const filterLetter = async (req, res) => {
 
     try {
         const letterType = req.params.letterType;
-        console.log("letterType=", letterType);
+        //console.log("letterType=", letterType);
         const letters = await Letter.find({
             letterType: letterType
         });
